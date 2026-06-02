@@ -63,54 +63,75 @@
    ║  Montos en millones de u$s.                                        ║
    ╚══════════════════════════════════════════════════════════════════╝ */
 var BCRA = {
-  titulo: "El BCRA roza los u$s10.000 millones comprados en el año",
-  fecha:  "Datos al 1 de junio de 2026",
+  titulo: "El BCRA quedó al borde de cumplir su meta anual de compras",
+  fecha:  "Datos al 2 de junio de 2026",
 
   kpis: {
-    reservasBrutas:  48368,   // reservas brutas hoy
-    varReservasDia:  177,      // variación de reservas en la rueda
-    compraDia:       55,       // compra del BCRA en la rueda
-    comprasYTD:      9802,     // compras acumuladas en el año
-    saldoMesAnterior: 2601     // compras de mayo (PPI)
+    reservasBrutas:   48427,  // reservas brutas al 02/06
+    varReservasDia:   59,     // variación de reservas en la rueda del 02/06
+    compraDia:        175,    // compra del BCRA el 02/06
+    comprasYTD:       9986,   // compras acumuladas en el año al 02/06
+    saldoMesAnterior: 2601    // compras de mayo (PPI)
   },
 
-  // DIARIO — últimas ruedas hasta el 1/6
+  // DIARIO — últimas 15 ruedas hábiles hasta el 02/06
   dia: {
-    labels:  ['21/05','22/05','23/05','26/05','27/05','28/05','29/05','30/05','01/06'],
-    brutas:  [45600,45200,45800,47908,46900,48511,48191,48191,48368],
-    compra:  [130,70,150,110,70,447,70,0,55],
+    labels:  ['12/05','13/05','14/05','15/05','18/05','19/05','20/05','21/05','22/05','26/05','27/05','28/05','29/05','01/06','02/06'],
+    brutas:  [46185,46531,46194,46024,46136,46190,46583,46751,46803,47908,47867,48511,48191,48368,48427],
+    compra:  [70,185,140,65,153,144,328,145,139,112,132,447,70,55,175],
     barLabel:'Compra del día'
   },
 
-  // SEMANAL
+  // SEMANAL — cierre del último día hábil de cada semana, todo 2026
   sem: {
-    labels:  ['Sem1 May','Sem2 May','Sem3 May','Sem4 May','Sem5 May'],
-    brutas:  [46200,46500,47100,48191,48368],
-    compra:  [640,761,690,455,55],
+    labels:  [
+      '09/01','16/01','23/01','30/01',
+      '06/02','13/02','20/02','27/02',
+      '06/03','13/03','20/03','27/03','31/03',
+      '01/04','10/04','17/04','24/04','30/04',
+      '08/05','15/05','22/05','29/05',
+      '02/06'
+    ],
+    brutas:  [
+      44396,44607,45561,44502,
+      44940,45158,46261,45560,
+      46004,45659,43808,43712,42091,
+      44427,45431,45791,46184,44483,
+      46056,46024,46803,48191,
+      48427
+    ],
+    compra:  [
+      218,469,291,179,
+      317,615,323,300,
+      291,295,485,251,348,
+      76,424,963,595,390,
+      330,596,909,761,
+      230
+    ],
     barLabel:'Compras de la semana'
   },
 
-  // MENSUAL — compras del mes (PPI/BCRA)
+  // MENSUAL — reservas al cierre del mes y compras del mes
   mes: {
     labels:  ['Ene','Feb','Mar','Abr','May','Jun*'],
-    brutas:  [46000,46905,42000,46751,48191,48368],
-    compra:  [1850,933,1320,2770,2601,55],
+    brutas:  [44502,45560,42091,44483,48191,48427],
+    compra:  [1157,1555,1670,2769,2601,230],
     barLabel:'Compras del mes'
   },
 
-  // YTD 2026 — acumulado de compras
+  // YTD 2026 — acumulado de compras mes a mes
   ytd: {
     labels:  ['Ene','Feb','Mar','Abr','May','Jun*'],
-    brutas:  [46000,46905,42000,46751,48191,48368],
-    compraAcum:[1850,2783,4103,6873,9474,9802],
+    brutas:  [44502,45560,42091,44483,48191,48427],
+    compraAcum:[1157,2712,4382,7151,9752,9986],
     barLabel:'Compras acumuladas YTD'
   },
 
-  // ANUAL — cierre de cada año
+  // ANUAL — cierre de cada año y compras netas
   anual: {
     labels:  ['2019','2020','2021','2022','2023','2024','2025','2026*'],
-    brutas:  [44800,39400,39600,44600,21209,29600,41100,48368],
-    compra:  [null,null,null,null,null,18900,15000,9802],
+    brutas:  [44800,39400,39600,44600,21209,29600,41100,48427],
+    compra:  [null,null,null,null,null,18900,15000,9986],
     barLabel:'Compras netas del año'
   }
 };
